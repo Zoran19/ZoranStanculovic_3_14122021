@@ -3,7 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:100,900i" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Shrikhand&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&family=Shrikhand&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/normalize.css" type="text/css" />
     <link rel="stylesheet" href="css/style.css">
     <title>Ohmyfood</title>
@@ -13,17 +16,20 @@
     ></script>
 </head>
 <body>
-<header>
-    <a href="/">
-        <img src="images/logo/ohmyfood.png" alt="">
+<header class="header">
+    <a href="/" >
+        <img src="images/logo/ohmyfood.png" alt="" class="header__logo">
     </a>
-    <p>Paris,Belleville</p>
+    <p class="localisation">
+        <i class="fas fa-map-marker-alt localisation__logo"></i>
+        Paris,Belleville</p>
 </header>
 <main>
+
     <section>
         <h2>Réservez le menu qui vous convient</h2>
         <p>découvrez des restaurants d'exception, sélectionnés par nos soins</p>
-        <button>Explorer nos restaurants</button>
+        <button class="btn --full-width ">Explorer nos restaurants</button>
     </section>
 
     <section>
