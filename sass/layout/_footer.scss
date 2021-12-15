@@ -1,0 +1,27 @@
+.footer{
+  background: map_get($background-grey,dark);
+  padding: map_get($space,little);
+  @include desktop-only{
+    padding-left: 400px;
+  }
+
+  &__title{
+    font-size: map_get($font-size,little);
+    color: white;
+  }
+  &__menu{
+    &__icone{
+      margin-right: map_get($space,little);
+    }
+    &__icone2{
+      margin-right: 4px;
+    }
+  }
+  ul{
+    list-style-type: none;
+    li{
+      a{color: white}
+      padding: 5px 0
+    }
+  }
+}

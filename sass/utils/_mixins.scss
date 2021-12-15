@@ -19,6 +19,7 @@
 }
 
 @mixin localisation{
+  text-align: center;
   width: $width-total;
 background:map-get($background-grey,medium) ;
   margin: 0;
@@ -46,7 +47,7 @@ background:map-get($background-grey,medium) ;
   margin:auto;
 }
   &__body{
-    width: 100%;
+    width: $width-total;
     background: map-get($background-grey,light);
     padding: map-get($space,medium)  0;
     margin: map-get($space,little)  map-get($space,medium);
@@ -62,8 +63,54 @@ background:map-get($background-grey,medium) ;
 }
 
 
+@mixin card{
+  margin:map-get($space,little) map-get($space,medium);
+  width:$width-total;
+  border-radius: $card-outlined;
+  box-shadow: $card-shadow;
+  &__image{
+    width:$width-total;
+    height: 160px;
+    object-fit: cover;
+    border-radius: $card-image-outlined;
+  }
+  &__container{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+    width: $width-total;
+    &__text{
+      width: $width-total;
+      margin:  map_get($space,little) map_get($space,little);
+      &__title{
+        width: $width-total;
+        margin: 0;
+      }
+      &__position{
+        width: $width-total;
+        margin: 5px 0;
+      }
+    }
+    &__heart{
+     color:red;
+      font-size: map_get($font-size,medium);
+      padding: 0 map_get($space,medium);
+    }
+
+  }
+}
+
+
 @mixin mobile-only {
   @media screen and (max-width: map-get($breakpoints, mobile)) {
+    @content;
+  }
+}
+
+
+@mixin desktop-only{
+  @media screen and (min-width: map-get($breakpoints, desktop)) {
     @content;
   }
 }

@@ -1,0 +1,12 @@
+.card{
+  @include card
+}
+
+.card-deck{
+  padding: 0 map-get($space,medium);
+  width: $width-total;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
