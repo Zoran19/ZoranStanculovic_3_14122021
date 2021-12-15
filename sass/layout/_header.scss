@@ -8,9 +8,11 @@
   text-align: center;
   width: $width-total;
   &__logo {
-padding: 15px 0;
+padding: map-get($space,little) 0;
+    margin-top:map-get($space,little) ;
+
     @include mobile-only{
-        width: 200px;
+        width: 180px;
     }
   }
 }

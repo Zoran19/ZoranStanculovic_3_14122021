@@ -4,29 +4,60 @@
   border:$border-btn-outlined;
   border-radius: $btn-outline;
   box-shadow: $btn-shadow;
-  padding: 20px 20px;
+  font-size: map-get($font-size, little);
+  padding: map-get($space, medium)  map-get($space, large) ;
+  margin: map-get($space, medium);
   cursor: pointer;
   &:hover{
     background: $colour-primary;
     color: white;
   }
   &--full-width {
-    width: 100%;
+    width: $width-total;
     margin: 0 auto;
   }
 }
 
 @mixin localisation{
   width: $width-total;
-background: $background-grey;
+background:map-get($background-grey,medium) ;
   margin: 0;
-  padding: 20px 0;
+  padding: map-get($space,medium) 0;
   box-shadow: inset 0 5px 5px #c6c6c6;
   font-weight: bold;
-  font-size: 20px;
-  color: #424242;
+  font-size: map-get($font-size,little);
+  color: map_get($background-grey,dark);
   &__logo{
-    padding-right: 20px;
+    padding-right: map-get($space,medium);
+  }
+}
+
+@mixin card_fonction{
+  display: flex;
+  flex-direction:row;
+  align-items: center;
+  &__number{
+  padding: 5px 10px;
+  border-radius: 500px;
+  background:$colour-primary;
+    color:white;
+  z-index:2;
+  position:absolute;
+  margin:auto;
+}
+  &__body{
+    width: 100%;
+    background: map-get($background-grey,light);
+    padding: map-get($space,medium)  0;
+    margin: map-get($space,little)  map-get($space,medium);
+    border-radius: $card-outlined;
+    font-weight: bold;
+    box-shadow: $card-shadow;
+    z-index:1;
+    &__logo{
+      margin:0  map-get($space,large);
+      color: map-get($background-grey,dark);
+    }
   }
 }
 

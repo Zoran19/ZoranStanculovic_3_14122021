@@ -4,7 +4,9 @@
   border: 0px solid black;
   border-radius: 50px;
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-  padding: 20px 20px;
+  font-size: 18px;
+  padding: 20px 30px;
+  margin: 20px;
   cursor: pointer; }
   .btn:hover {
     background: #9356DC;
@@ -13,14 +15,42 @@
     width: 100%;
     margin: 0 auto; }
 
+.card_fonction {
+  display: flex;
+  flex-direction: row;
+  align-items: center; }
+  .card_fonction__number {
+    padding: 5px 10px;
+    border-radius: 500px;
+    background: #9356DC;
+    color: white;
+    z-index: 2;
+    position: absolute;
+    margin: auto; }
+  .card_fonction__body {
+    width: 100%;
+    background: #F6F6F6;
+    padding: 20px 0;
+    margin: 10px 20px;
+    border-radius: 15px;
+    font-weight: bold;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    z-index: 1; }
+    .card_fonction__body__logo {
+      margin: 0 30px;
+      color: #424242; }
+
+.card_fonction_deck {
+  width: 100%; }
+
 .localisation {
   width: 100%;
-  background: #f2f2f2;
+  background: #EAEAEA;
   margin: 0;
   padding: 20px 0;
   box-shadow: inset 0 5px 5px #c6c6c6;
   font-weight: bold;
-  font-size: 20px;
+  font-size: 18px;
   color: #424242; }
   .localisation__logo {
     padding-right: 20px; }
@@ -33,10 +63,49 @@
   text-align: center;
   width: 100%; }
   .header__logo {
-    padding: 15px 0; }
+    padding: 10px 0;
+    margin-top: 10px; }
     @media screen and (max-width: 767px) {
       .header__logo {
-        width: 200px; } }
+        width: 180px; } }
+
+.introduction {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background: #F6F6F6;
+  padding: 30px 30px; }
+  .introduction__title {
+    margin: 10px 20px;
+    font-size: 25px 0;
+    font-family: Roboto; }
+  .introduction__text {
+    margin: 0;
+    font-size: 18px; }
+
+.fonctionnement {
+  padding: 30px 20px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center; }
+  .fonctionnement__title {
+    width: 100%;
+    margin: 10px;
+    font-family: Roboto; }
+
+.restaurants {
+  padding: 30px 20px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center; }
+  .restaurants__title {
+    width: 100%;
+    margin: 10px;
+    font-family: Roboto; }
 
 body {
   font-family: Roboto;
