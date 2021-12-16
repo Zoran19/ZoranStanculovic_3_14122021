@@ -9,7 +9,7 @@
   margin: 20px;
   cursor: pointer; }
   .btn:hover {
-    background: #9356DC;
+    background: linear-gradient(#ff93e1, #a16be0);
     color: white; }
   .btn--full-width {
     width: 100%;
@@ -36,6 +36,9 @@
     font-weight: bold;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     z-index: 1; }
+    .card_fonction__body:hover {
+      background: rgba(255, 121, 218, 0.1);
+      box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.2); }
     .card_fonction__body__logo {
       margin: 0 30px;
       color: #424242; }
@@ -48,11 +51,27 @@
   width: 100%;
   border-radius: 15px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); }
-  .card__image {
-    width: 100%;
-    height: 160px;
-    object-fit: cover;
-    border-radius: 15px 15px 0 0; }
+  .card:hover {
+    background: rgba(255, 121, 218, 0.1);
+    box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.2); }
+  .card__header {
+    display: flex;
+    justify-content: flex-end; }
+    .card__header__image {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 15px 15px 0 0;
+      z-index: 1; }
+    .card__header__new {
+      padding: 10px 20px;
+      border-radius: 5px;
+      background: #99E2D0;
+      color: #278870;
+      font-weight: bold;
+      z-index: 2;
+      position: absolute;
+      margin: 20px; }
   .card__container {
     display: flex;
     justify-content: space-between;
@@ -68,10 +87,23 @@
       .card__container__text__position {
         width: 100%;
         margin: 5px 0; }
-    .card__container__heart {
-      color: red;
+    .card__container__like .iconRed {
+      display: none;
+      font-size: 20px;
+      padding: 0 20px;
+      transition: color 5000ms, transform 5000ms;
+      color: white;
+      transform: scale(1); }
+      .card__container__like .iconRed:hover {
+        color: #9356DC;
+        transform: scale(1.2); }
+    .card__container__like .iconEmpty {
       font-size: 20px;
       padding: 0 20px; }
+    .card__container__like:hover .iconRed {
+      display: inline-block; }
+    .card__container__like:hover .iconEmpty {
+      display: none; }
 
 .card-deck {
   padding: 0 20px;

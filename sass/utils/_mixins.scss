@@ -9,7 +9,7 @@
   margin: map-get($space, medium);
   cursor: pointer;
   &:hover{
-    background: $colour-primary;
+    background:linear-gradient(lighten($colour-secondary,5%) , lighten($colour-primary,5%));
     color: white;
   }
   &--full-width {
@@ -38,7 +38,7 @@ background:map-get($background-grey,medium) ;
   flex-direction:row;
   align-items: center;
   &__number{
-  padding: 5px 10px;
+  padding: 5px map_get($space,little);
   border-radius: 500px;
   background:$colour-primary;
     color:white;
@@ -55,6 +55,11 @@ background:map-get($background-grey,medium) ;
     font-weight: bold;
     box-shadow: $card-shadow;
     z-index:1;
+    &:hover{
+      background: transparentize($colour-secondary, 0.9);
+      box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.2);
+    }
+
     &__logo{
       margin:0  map-get($space,large);
       color: map-get($background-grey,dark);
@@ -68,12 +73,32 @@ background:map-get($background-grey,medium) ;
   width:$width-total;
   border-radius: $card-outlined;
   box-shadow: $card-shadow;
-  &__image{
+  &:hover{
+    background: transparentize($colour-secondary, 0.9);
+    box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.2);
+  }
+  &__header{
+    display: flex;
+    justify-content: flex-end;
+    &__image{
     width:$width-total;
     height: 160px;
     object-fit: cover;
     border-radius: $card-image-outlined;
+    z-index: 1;
   }
+    &__new{
+      padding: map_get($space,little) map_get($space,medium);
+      border-radius: 5px;
+      background:$colour-tertiaire;
+      color:darken($colour-tertiaire,40%);
+      font-weight: bold;
+      z-index:2;
+      position:absolute;
+      margin:map_get($space,medium) ;
+    }
+  }
+
   &__container{
     display: flex;
     justify-content: space-between;
@@ -92,12 +117,36 @@ background:map-get($background-grey,medium) ;
         margin: 5px 0;
       }
     }
-    &__heart{
-     color:red;
-      font-size: map_get($font-size,medium);
-      padding: 0 map_get($space,medium);
-    }
 
+
+
+
+    &__like{
+      .iconRed {
+        display:none;
+        font-size: map_get($font-size,medium);
+        padding: 0 map_get($space,medium);
+        transition: color 5000ms, transform 5000ms;
+        color: white;
+        transform: scale(1);
+       &:hover{
+          color:$colour-primary;
+         transform: scale(1.2);
+        }
+      }
+      .iconEmpty{
+        font-size: map_get($font-size,medium);
+        padding: 0 map_get($space,medium);
+      }
+      &:hover {
+        .iconRed {
+          display: inline-block;
+        }
+        .iconEmpty {
+          display: none;
+        }
+      }
+    }
   }
 }
 
