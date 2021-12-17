@@ -1,0 +1,39 @@
+#loading-bar-spinner.spinner {
+  left: 50%;
+  margin-left: -20px;
+  top: 50%;
+  margin-top: -20px;
+  position: absolute;
+  z-index: 19 ;
+  animation: loading-bar-spinner 500ms linear both;
+  animation-iteration-count: 3;
+}
+
+#loading-bar-spinner.spinner .spinner-icon {
+  width: 40px;
+  height: 40px;
+  border:  solid 4px transparent;
+  border-top-color:  $colour-primary;
+  border-left-color: $colour-primary;
+  border-radius: 50%;
+}
+
+@keyframes loading-bar-spinner {
+  0%   { transform: rotate(0deg);}
+  100% {opacity:(0); transform: rotate(360deg);display: none;}
+}
+
+.main {
+  animation: body 3s 2000ms both;
+}
+
+
+
+@keyframes body {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
