@@ -6,7 +6,7 @@
   position: absolute;
   z-index: 19 ;
   animation: loading-bar-spinner 500ms linear both;
-  animation-iteration-count: 3;
+  animation-iteration-count: 2;
 }
 
 #loading-bar-spinner.spinner .spinner-icon {
@@ -24,7 +24,7 @@
 }
 
 .main {
-  animation: body 3s 2000ms both;
+  animation: body 1s 1000ms both;
 }
 
 

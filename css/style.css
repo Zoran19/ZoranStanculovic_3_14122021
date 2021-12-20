@@ -1,3 +1,27 @@
+.entrees {
+  animation: aparition 1000ms 500ms both; }
+
+.plats {
+  animation: aparition 1000ms 1000ms both; }
+
+.desserts {
+  animation: aparition 1000ms 1500ms both; }
+
+@keyframes aparition {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+@keyframes check {
+  0% {
+    transform: rotate(0deg); }
+  100% {
+    transform: rotate(360deg); } }
+@keyframes check-background {
+  0% {
+    width: 0; }
+  100% {
+    width: 70px; } }
 .btn {
   color: white;
   background: linear-gradient(#FF79DA, #9356DC);
@@ -13,6 +37,7 @@
     color: white; }
 
 .card_fonction {
+  cursor: pointer;
   display: flex;
   flex-direction: row;
   align-items: center; }
@@ -88,7 +113,7 @@
       display: none;
       font-size: 20px;
       padding: 0 20px;
-      transition: color 5000ms, transform 5000ms;
+      transition: color 1000ms, transform 1000ms;
       color: white;
       transform: scale(1); }
       .card__container__like .iconRed:hover {
@@ -111,29 +136,54 @@
   align-items: center; }
 
 .card-menu {
+  cursor: pointer;
   border-radius: 15px;
   background: white;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   width: 100%;
-  padding: 10px 0;
-  margin: 10px 0; }
+  margin: 10px 0;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row; }
   .card-menu:hover {
     background: rgba(255, 121, 218, 0.1);
     box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.2); }
-  .card-menu__title {
-    padding: 5px 20px;
-    margin: 0;
-    font-size: 18px; }
-  .card-menu__text {
-    padding: 0 20px;
-    display: flex;
-    justify-content: space-between;
-    flex-direction: row; }
-    .card-menu__text__paragraphe {
-      margin: 0; }
-    .card-menu__text__price {
+    .card-menu:hover .card-menu__check {
+      display: flex; }
+    .card-menu:hover .card-menu__container__text__paragraphe {
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+      width: 80%; }
+  .card-menu__container {
+    width: 100%;
+    padding: 10px 0; }
+    .card-menu__container__title {
+      padding: 5px 20px;
       margin: 0;
-      font-weight: bold; }
+      font-size: 18px; }
+    .card-menu__container__text {
+      padding: 0 20px;
+      display: flex;
+      justify-content: space-between;
+      flex-direction: row;
+      align-items: center; }
+      .card-menu__container__text__paragraphe {
+        margin: 0; }
+      .card-menu__container__text__price {
+        margin: 0;
+        font-weight: bold; }
+  .card-menu__check {
+    animation: check-background 400ms linear both;
+    display: none;
+    background: #99E2D0;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0 15px 15px 0; }
+    .card-menu__check__icon {
+      color: white;
+      font-size: 20px;
+      animation: check 400ms linear both; }
 
 .localisation {
   text-align: center;
@@ -156,7 +206,7 @@
   position: absolute;
   z-index: 19;
   animation: loading-bar-spinner 500ms linear both;
-  animation-iteration-count: 3; }
+  animation-iteration-count: 2; }
 
 #loading-bar-spinner.spinner .spinner-icon {
   width: 40px;
@@ -174,7 +224,7 @@
     transform: rotate(360deg);
     display: none; } }
 .main {
-  animation: body 3s 2000ms both; }
+  animation: body 1s 1000ms both; }
 
 @keyframes body {
   0% {
@@ -285,13 +335,37 @@
       max-width: 1280px;
       margin-right: auto;
       margin-left: auto; } }
-  .main-menu .bg {
+  .main-menu .bg-francais {
     background: url("../images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg");
     height: 250px;
     background-size: cover;
     background-repeat: no-repeat; }
     @media screen and (min-width: 993px) {
-      .main-menu .bg {
+      .main-menu .bg-francais {
+        height: 500px; } }
+  .main-menu .bg-enchantee {
+    background: url("../images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg");
+    height: 250px;
+    background-size: cover;
+    background-repeat: no-repeat; }
+    @media screen and (min-width: 993px) {
+      .main-menu .bg-enchantee {
+        height: 500px; } }
+  .main-menu .bg-palette {
+    background: url("../images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg");
+    height: 250px;
+    background-size: cover;
+    background-repeat: no-repeat; }
+    @media screen and (min-width: 993px) {
+      .main-menu .bg-palette {
+        height: 500px; } }
+  .main-menu .bg-delice {
+    background: url("../images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg");
+    height: 250px;
+    background-size: cover;
+    background-repeat: no-repeat; }
+    @media screen and (min-width: 993px) {
+      .main-menu .bg-delice {
         height: 500px; } }
   .main-menu__plats {
     border-radius: 40px 40px 0 0;

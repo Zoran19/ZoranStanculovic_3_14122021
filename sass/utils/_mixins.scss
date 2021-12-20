@@ -31,6 +31,7 @@ background:map-get($background-grey,medium) ;
 }
 
 @mixin card_fonction{
+  cursor: pointer;
   display: flex;
   flex-direction:row;
   align-items: center;
@@ -119,7 +120,7 @@ background:map-get($background-grey,medium) ;
         display:none;
         font-size: map_get($font-size,medium);
         padding: 0 map_get($space,medium);
-        transition: color 5000ms, transform 5000ms;
+        transition: color 1000ms, transform 1000ms;
         color: white;
         transform: scale(1);
        &:hover{
@@ -143,35 +144,104 @@ background:map-get($background-grey,medium) ;
   }
 }
 @mixin card-menu{
+  cursor: pointer;
   border-radius: $card-outlined;
   background: white;
   box-shadow: $card-shadow;
   width: $width-total;
-  padding:map_get($space,little) 0;
   margin: map_get($space,little) 0;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
   &:hover{
     background: transparentize($colour-secondary, 0.9);
     box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.2);
-  }
-  &__title{
-    padding:5px map_get($space,medium);
-    margin: 0;
-    font-size: map_get($font-size,little);
-  }
-  &__text{
-    padding:0 map_get($space,medium);
-    display: flex;
-    justify-content: space-between;
-    flex-direction: row;
-    &__paragraphe{
-      margin: 0;
+    .card-menu__check{
+      display: flex;
     }
-    &__price{
+.card-menu__container__text__paragraphe{
+  text-overflow:ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 80%;
+}
+  }
+  &__container{
+    width:$width-total;
+    padding:map_get($space,little) 0;
+    &__title{
+      padding:5px map_get($space,medium);
       margin: 0;
-      font-weight: bold;
+      font-size: map_get($font-size,little);
     }
+    &__text{
+      padding:0 map_get($space,medium);
+      display: flex;
+      justify-content: space-between;
+      flex-direction: row;
+      align-items: center;
+      &__paragraphe{
+        margin: 0;
+      }
+      &__price{
+        margin: 0;
+        font-weight: bold;
+      }
+  }
+  }
+    &__check{
+      animation: check-background 400ms linear both;
+      display: none;
+      background: $colour-tertiaire;
+      justify-content: center;
+      align-items: center;
+      border-radius: 0 $card-outlined $card-outlined 0;
+
+      &__icon{
+        color: white;
+        font-size: map_get($font-size,medium);
+        animation: check 400ms linear both;
+      }
+    }
+
+}
+
+
+.entrees{
+  animation: aparition 1000ms 500ms both;
+}
+.plats{
+  animation: aparition 1000ms 1000ms both;
+}
+.desserts{
+  animation: aparition 1000ms 1500ms both;
+}
+
+@keyframes aparition {
+  0% {
+    opacity: 0;
+  }
+  100% {
+   opacity: 1;
   }
 }
+
+@keyframes check {
+  0%   { transform: rotate(0deg); }
+  100% { transform: rotate(360deg);}
+}
+@keyframes check-background {
+  0% {
+    width:0;
+  }
+  100% {
+    width: 70px;
+  }
+}
+
+
+
+
 
 @mixin mobile-only {
   @media screen and (max-width: map-get($breakpoints, mobile)) {
