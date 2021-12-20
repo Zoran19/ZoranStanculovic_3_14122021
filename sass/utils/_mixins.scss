@@ -12,10 +12,7 @@
     background:linear-gradient(lighten($colour-secondary,5%) , lighten($colour-primary,5%));
     color: white;
   }
-  &--full-width {
-    width: $width-total;
-    margin: 0 auto;
-  }
+
 }
 
 @mixin localisation{
@@ -145,7 +142,36 @@ background:map-get($background-grey,medium) ;
     }
   }
 }
-
+@mixin card-menu{
+  border-radius: $card-outlined;
+  background: white;
+  box-shadow: $card-shadow;
+  width: $width-total;
+  padding:map_get($space,little) 0;
+  margin: map_get($space,little) 0;
+  &:hover{
+    background: transparentize($colour-secondary, 0.9);
+    box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.2);
+  }
+  &__title{
+    padding:5px map_get($space,medium);
+    margin: 0;
+    font-size: map_get($font-size,little);
+  }
+  &__text{
+    padding:0 map_get($space,medium);
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    &__paragraphe{
+      margin: 0;
+    }
+    &__price{
+      margin: 0;
+      font-weight: bold;
+    }
+  }
+}
 
 @mixin mobile-only {
   @media screen and (max-width: map-get($breakpoints, mobile)) {
