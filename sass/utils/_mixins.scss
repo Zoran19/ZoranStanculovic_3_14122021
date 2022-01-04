@@ -159,6 +159,14 @@ background:map-get($background-grey,medium) ;
     .card-menu__check{
       display: flex;
     }
+
+    .card-menu__container__title{
+      text-overflow:ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+      width: 80%;
+    }
+
 .card-menu__container__text__paragraphe{
   text-overflow:ellipsis;
   white-space: nowrap;
