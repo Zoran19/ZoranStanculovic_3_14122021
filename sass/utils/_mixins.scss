@@ -165,6 +165,9 @@ background:map-get($background-grey,medium) ;
   overflow: hidden;
   width: 80%;
 }
+    .card-menu__container{
+      width: 80%;
+    }
   }
   &__container{
     width:$width-total;

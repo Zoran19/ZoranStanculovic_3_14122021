@@ -155,6 +155,8 @@
       white-space: nowrap;
       overflow: hidden;
       width: 80%; }
+    .card-menu:hover .card-menu__container {
+      width: 80%; }
   .card-menu__container {
     width: 100%;
     padding: 10px 0; }
@@ -289,7 +291,7 @@
       margin-left: auto; } }
   .introduction__title {
     margin: 10px 20px;
-    font-size: 25px;
+    font-size: 25px 0;
     font-family: Roboto; }
   .introduction__text {
     margin: 0;
